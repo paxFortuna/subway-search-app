@@ -31,7 +31,9 @@ class _SubwayInfoScreenState extends State<SubwayInfoScreen> {
   void initState() {
     super.initState();
     _repository.fetchSubwayInfo("문래").then((value) {
-      print(value);
+      setState(() {
+        _subwayInfos = value;
+      });
     });
   }
 
