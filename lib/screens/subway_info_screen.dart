@@ -30,7 +30,7 @@ class _SubwayInfoScreenState extends State<SubwayInfoScreen> {
   @override
   void initState() {
     super.initState();
-    _repository.fetchInfo("문래").then((value) {
+    _repository.fetchSubwayInfo("문래").then((value) {
       print(value);
     });
   }
@@ -82,7 +82,7 @@ class _SubwayInfoScreenState extends State<SubwayInfoScreen> {
                     // 키보드 닫기 이벤트 처리
                     FocusManager.instance.primaryFocus?.unfocus();
                     _subwayInfos =
-                        await _repository.fetchInfo(_textController.text);
+                        await _repository.fetchSubwayInfo(_textController.text);
                     _textController.clear();
                     setState(() {});
                   },

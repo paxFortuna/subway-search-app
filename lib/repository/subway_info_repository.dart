@@ -8,8 +8,8 @@ class SubwayInfoRepository {
       'http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5';
 
   @override
-  Future<List<SubwayInfo>> fetchInfo(String stationName) async {
-    final url = Uri.parse('$baseUrl/$stationName');
+  Future<List<SubwayInfo>> fetchSubwayInfo(String query) async {
+    final url = Uri.parse('$baseUrl/$query');
     final response = await http.get(url);
     final jsonResponse = jsonDecode(response.body);
 
