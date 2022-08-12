@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:subway_info/view_model/subway_view_model.dart';
 
 import 'screens/subway_info_screen.dart';
 
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const SubwayInfoScreen(),
+      home: ChangeNotifierProvider(
+        create: (BuildContext context) => SubwayInfoViewModel(),
+      child: const SubwayInfoScreen(),),
     );
   }
 }
